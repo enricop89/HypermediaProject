@@ -44,7 +44,7 @@ h4{
 }
 
 a {
-  color: #c52d2f;
+  color: #9100b4;
   -webkit-transition: color 300ms, background-color 300ms;
   -moz-transition: color 300ms, background-color 300ms;
   -o-transition:  color 300ms, background-color 300ms;
@@ -52,7 +52,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #d43133;
+  color: #e07af8;
 }
 
 hr {
@@ -90,7 +90,7 @@ hr {
 
 a:hover,
 a:focus {
-  color: #111;
+  color: #e07af8;
   text-decoration: none;
   outline: none;
 }
@@ -289,7 +289,7 @@ input.search-form:hover {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover{
-	background-color: #c52d2f;
+	background-color: #9100b4;
   color: #fff;
 }
 
@@ -339,7 +339,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li:focus > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li.active > a {
-  background-color: #c52d2f;
+  background-color: #9100b4;
   color: #fff;
 }
 
@@ -359,24 +359,27 @@ input.search-form:hover {
 
 #page-title h1{
     text-align: center;
+    font-size: 5vw; <!-- 5vw = 5% view port width-->
 }
 
 #page-title h3{
     text-align: center;
+    font-size: 2vw; <!-- 2vw = 2% view port width-->
 }
 
 #register img {
-    width: 70px;
+    width: 5vw;
     float: right;
     margin-top: 0px;
 }
 
 #register h3{
     margin-bottom: 0px;
+    font-size: 1.18vw; <!-- 2vw = 2% view port width-->
 }
 
 .logo {
-    width: 170px;
+    width: 100%;
 }
 /*************************
 *******Home Page******
@@ -2531,7 +2534,7 @@ shortcodes page css
 }
 
 #footer a:hover {
-  color: #c52d2f;
+  color: #e07af8;
 }
 
 #footer ul {
