@@ -357,7 +357,13 @@ input.search-form:hover {
   padding-bottom: 0;
 }
 
+.page-title h1{
+    text-align: center;
+}
 
+.page-title h3{
+    text-align: center;
+}
 /*************************
 *******Home Page******
 **************************/
@@ -2524,9 +2530,3 @@ shortcodes page css
   display: inline-block;
   margin-left: 15px;
 }
-
-
-
-
-
-
