@@ -52,7 +52,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #e07af8; <!-- changed original color -->
+  color: #e07af8; /*-- changed original color */
 }
 
 hr {
@@ -90,7 +90,7 @@ hr {
 
 a:hover,
 a:focus {
-  color: #e07af8; <!-- changed original color -->
+  color: #e07af8; /* changed original color */
   text-decoration: none;
   outline: none;
 }
@@ -257,7 +257,7 @@ input.search-form:hover {
   width: 180px;
 }
 
-<!-- Not used in website-->
+/* Not used in website*/
 /*.navbar-brand {
   padding: 0;
   margin:0;
@@ -290,7 +290,7 @@ input.search-form:hover {
 }
 
 .navbar-inverse .navbar-nav > li > a:hover{
-	background-color: #9100b4; <!-- changed original color -->
+	background-color: #9100b4; /* changed original color */
     color: #fff;
 }
 
@@ -310,7 +310,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #9100b4; <!-- changed original color -->
+  background-color: #9100b4; /* changed original color */
   color: #fff;
 }
 
@@ -340,7 +340,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav .dropdown-menu > li:hover > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li:focus > a,
 .navbar-inverse .navbar-nav .dropdown-menu > li.active > a {
-  background-color: #9100b4; <!-- changed original color -->
+  background-color: #9100b4; /* changed original color */
   color: #fff;
 }
 
@@ -358,15 +358,23 @@ input.search-form:hover {
   padding-bottom: 0;
 }
 
-<!-- PERSONALIZATION OF TEMPLATE-->
+
+
+/****************
+*****************
+PERSONALIZATION OF THE TEMPLATE
+*****************
+*****************/
+
+
 #page-title h1{
     text-align: center;
-    font-size: 5vw; <!-- 5vw = 5% view port width-->
+    font-size: 5vw; /* 5vw = 5% view port width*/
 }
 
 #page-title h3{
     text-align: center;
-    font-size: 2vw; <!-- 2vw = 2% view port width-->
+    font-size: 2vw; /* 2vw = 2% view port width*/
 }
 
 #register img {
@@ -377,14 +385,14 @@ input.search-form:hover {
 
 #register h3{
     margin-bottom: 0px;
-    font-size: 1.18vw; <!-- 1.18vw = 1.18% view port width-->
+    font-size: 1.18vw; /* 1.18vw = 1.18% view port width*/
 }
 
 .logo {
     width: 100%;
 }
 
-<!-- /PERSONALIZATION OF TEMPLATE-->
+
 
 /*************************
 *******Home Page******
@@ -2531,7 +2539,7 @@ SHORTCODES PAGE CSS
   padding-bottom: 30px;
   color: #fff;
   background: #2e2e2e;
-  border-top: 5px solid #9100b4; <!-- moved colored border from border-bottom of #bottom to border-top of #footer -->
+  border-top: 5px solid #9100b4; /* moved colored border from border-bottom of #bottom to border-top of #footer */
 }
 
 #footer a {
@@ -2539,7 +2547,7 @@ SHORTCODES PAGE CSS
 }
 
 #footer a:hover {
-  color: #e07af8; <!-- changed original color-->
+  color: #e07af8; /* changed original color*/
 }
 
 #footer ul {
