@@ -290,7 +290,7 @@ input.search-form:hover {
 
 .navbar-inverse .navbar-nav > li > a:hover{
 	background-color: #9100b4;
-  color: #fff;
+    color: #fff;
 }
 
 .navbar-inverse {
@@ -309,7 +309,7 @@ input.search-form:hover {
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
 .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: #c52d2f;
+  background-color: #9100b4;
   color: #fff;
 }
 
@@ -375,7 +375,7 @@ input.search-form:hover {
 
 #register h3{
     margin-bottom: 0px;
-    font-size: 1.18vw; <!-- 2vw = 2% view port width-->
+    font-size: 1.18vw; <!-- 1.18vw = 1.18% view port width-->
 }
 
 .logo {

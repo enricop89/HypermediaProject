@@ -99,7 +99,7 @@
 
 
 /* sm */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 700px) and (max-width: 991px) {
   /* Make Navigation Toggle on Desktop Hover */
   .dropdown:hover .dropdown-menu {
       display: block;
@@ -114,6 +114,26 @@
 
   .navbar-nav > li {
     margin-left: 0;
+  }
+
+  .logo {
+    width: 150%;
+  }
+
+  #page-title h1 {
+      font-size: 8vw;
+  }
+
+  #page-title h3{
+      font-size: 3vw;
+  }
+
+  #register h3{
+      font-size: 2vw;
+  }
+
+  #register img {
+    width: 8vw;
   }
 
   #main-slider .carousel h1 {
@@ -186,7 +206,7 @@
 }
 
 /* xs */
-@media (max-width: 767px) {
+@media (max-width: 699px) {
   .container > .navbar-header, .container > .navbar-collapse{
     margin-left: 0;
   }
@@ -199,8 +219,28 @@
     width: 120px;
   }
 
+  .logo {
+    width: 200%;
+  }
+
   .navbar-nav > li {
     padding-bottom: 0;
+  }
+
+  #page-title h1 {
+      font-size: 8vw;
+  }
+
+  #page-title h3{
+      font-size: 3vw;
+  }
+
+  #register h3{
+      font-size: 2vw;
+  }
+
+  #register img {
+    width: 8vw;
   }
 
   #main-slider .carousel h1 {
