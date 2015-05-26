@@ -392,6 +392,11 @@ PERSONALIZATION OF THE TEMPLATE
     width: 100%;
 }
 
+/****************
+*****************
+END PERSONALIZATION OF THE TEMPLATE
+*****************
+*****************/
 
 
 /*************************
@@ -470,7 +475,7 @@ PERSONALIZATION OF THE TEMPLATE
 #main-slider .next {
   position: absolute;
   top: 50%;
-  background-color: #c52d2f;
+  background-color: #9100b4; /*changed original color*/
   color: #fff;
   display: inline-block;
   margin-top: -25px;
@@ -519,9 +524,9 @@ PERSONALIZATION OF THE TEMPLATE
 #main-slider .carousel-indicators .active{
   width: 20px;
   height: 20px;
-  background-color: #c52d2f;
+  background-color: #9100b4; /* changed original color */
    margin: 0 15px 0 0;
-   border: 1px solid #c52d2f;
+   border: 1px solid #9100b4; /* changed original color */
    position: relative;
 }
 
@@ -531,8 +536,8 @@ PERSONALIZATION OF THE TEMPLATE
   width: 24px;
   height: 24px;
   border-radius: 100%;
-  background: #c52d2f;
-  border: 1px solid #c52d2f;
+  background: #9100b4; /* changed original color */
+  border: 1px solid #9100b4; /* changed original color */
   left: -3px;
   top: -3px;
 }
@@ -568,6 +573,26 @@ PERSONALIZATION OF THE TEMPLATE
   -ms-animation: fadeInUp 300ms linear 1200ms both;
   animation: fadeInUp 300ms linear 1200ms both;
 }
+
+/****************
+*****************
+PERSONALIZATION OF THE TEMPLATE
+*****************
+*****************/
+
+.carousel-content h1 {
+    text-shadow: 2px 2px 2px #000;
+}
+
+.carousel-content h2 {
+    text-shadow: 2px 2px 2px #000;
+}
+
+/****************
+*****************
+END PERSONALIZATION OF THE TEMPLATE
+*****************
+*****************/
 
 #feature {
   background: #f2f2f2;
@@ -2506,8 +2531,10 @@ SHORTCODES PAGE CSS
 #bottom h3 {
   margin-top: 0;
   margin-bottom: 10px;
-  text-transform: uppercase;
-  font-size:22px;
+  /*text-transform: uppercase;*/ /* removed from original template */
+  text-align: center; /* added to original template */
+  font-size:40px;
+  line-height: 40px;  /* added to original template */
   color: #000;
 }
 
