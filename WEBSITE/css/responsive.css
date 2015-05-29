@@ -245,6 +245,10 @@
   #register img {
     width: 8vw;
   }
+
+  #category .btn-primary {
+    font-size: 9vw;
+}
 <!-- /PERSONALIZATION OF TEMPLATE-->
 
   #main-slider .carousel h1 {
