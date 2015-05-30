@@ -24,7 +24,7 @@ else {
 			$json = json_encode($row);
 			echo "{$callback}({$json})";	
             
-        echo json_encode($myArray);
+       
     }
 
    
@@ -32,5 +32,6 @@ else {
     //close connection
 	$mysqli->close();
 
+}
 }
 ?>
