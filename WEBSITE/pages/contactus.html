@@ -30,40 +30,7 @@
     <link rel="icon" sizes="192×192" href="../img/ico/logo192.png"> <!-- icons for Android app-->
     <link rel="icon" sizes="128×128" href="../img/ico/logo128.png">
     <!-- /ICONS -->
-    
-    <!-- google maps script -->
-    <script type="text/javascript"
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfBRhO8BXHG3j1YkyLvyt7cPlyu4qHjU0 ">
-    </script>
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: { lat: 34.03636, lng: -118.26040},
-          zoom: 12
-        };
-          var description="Here at Globo Gym, we understand that \"Ugliness\" and \"Fatness\" are genetic disorders, much like baldness or necrophilia, and it's only your fault if you don't hate yourself enough to do something about it.And that's where we come in";
-          
-        var map = new google.maps.Map(document.getElementById('map-canvas'),
-            mapOptions);
-          
-          var infowindow = new google.maps.InfoWindow({
-            content: description,
-              maxWidth: 150
-    });
-
-          var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(34.03636 ,-118.26040),
-              map: map,
-              title: 'Globo Gym!'
-  });
-          google.maps.event.addListener(marker, 'click', function() {
-    infowindow.open(map,marker);
-  });
-      }
-        
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-    </head>
+</head>
 
 <body class="homepage">
 
@@ -136,66 +103,62 @@
         </nav><!--/nav-->
 
     </header><!--/header-->
-
-<section id="contact-info">
-        <div class="center">                
-            <h2 id="address_gym">How to Reach Us?</h2>
-           
-        </div>
-        <div class="gmap-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-5 text-center">
-                        <div class="gmap" id="map-canvas">
-                            
+<section id="contact-page">
+        <div class="container">
+            <div class="center">        
+                <h2 style="margin-top:10px;">Drop Your Message</h2>
+                <p class="address"></p>
+            </div> 
+            <div class="row contact-wrap"> 
+                <div class="status alert alert-success" style="display: none"></div>
+                <form id="main-contact-form" class="contact-form" name="contact-form" method="post" action="sendemail.php">
+                    <div class="col-sm-5 col-sm-offset-1">
+                        <div class="form-group">
+                            <label>Name *</label>
+                            <input type="text" name="name" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Email *</label>
+                            <input type="email" name="email" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>Company Name</label>
+                            <input type="text" class="form-control">
+                        </div>                        
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label>Subject *</label>
+                            <input type="text" name="subject" class="form-control" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label>Message *</label>
+                            <textarea name="message" id="message" required="required" class="form-control" rows="8"></textarea>
+                        </div>                        
+                        <div class="form-group">
+                            <button type="submit" name="submit1" class="btn btn-primary btn-lg" required="required">Submit Message</button>
                         </div>
                     </div>
-
-                    <div class="col-sm-7 map-content">
-                        <ul class="row">
-                            <li class="col-sm-6">
-                                <address>
-                                    <h5 id="bus">By bus</h5>
-                                    
-                                </address>
-
-                                <address>
-                                    <h5 id="car">By car</h5>
-                                    
-                                </address>
-                            </li>
-
-
-                            <li class="col-sm-6">
-                                <address>
-                                    <h5 id="train">By train</h5>
-                                    
-                                </address>
-
-                                
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>  <!--/gmap_area -->
-
+                </form> 
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#contact-page-->
     
-    
- 
-
     <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
                     <p>Check us out on these social sites!</p>
                     <ul>
-                        <li><a href="#"><img src="../img/social/facebook.png" onmouseover="this.src='../img/social/facebooka.png';" onmouseout="this.src='img/social/facebook.png';" /></a></li>
-                        <li><a href="#"><img src="../img/social/Instagram.png" onmouseover="this.src='../img/social/Instagrama.png';" onmouseout="this.src='img/social/Instagram.png';" /></a></li>
-                        <li><a href="#"><img src="../img/social/Twitter.png" onmouseover="this.src='../img/social/Twittera.png';" onmouseout="this.src='img/social/Twitter.png';" /></a></li>
-                        <li><a href="#"><img src="../img/social/youtube.png" onmouseover="this.src='../img/social/youtubea.png';" onmouseout="this.src='img/social/youtube.png';" /></a></li>
-                        <li><a href="#"><img src="../img/social/google+.png" onmouseover="this.src='../img/social/google+a.png';" onmouseout="this.src='img/social/google+.png';" /></a></li>
+                        <li><a href="#"><img src="../img/social/facebook.png" onmouseover="this.src='../img/social/facebooka.png';" onmouseout="this.src='../img/social/facebook.png';" /></a></li>
+                        <li><a href="#"><img src="../img/social/Instagram.png" onmouseover="this.src='../img/social/Instagrama.png';" onmouseout="this.src='../img/social/Instagram.png';" /></a></li>
+                        <li><a href="#"><img src="../img/social/Twitter.png" onmouseover="this.src='../img/social/Twittera.png';" onmouseout="this.src='../img/social/Twitter.png';" /></a></li>
+                        <li><a href="#"><img src="../img/social/youtube.png" onmouseover="this.src='../img/social/youtubea.png';" onmouseout="this.src='../img/social/youtube.png';" /></a></li>
+                        <li><a href="#"><img src="../img/social/google+.png" onmouseover="this.src='../img/social/google+a.png';" onmouseout="this.src='../img/social/google+.png';" /></a></li>
                     </ul>
                 </div>
                 <div class="col-sm-5">
@@ -215,6 +178,5 @@
     <script src="../js/jquery.isotope.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/wow.min.js"></script>
-    <script src="../js/where.js"></script>
 </body>
 </html>

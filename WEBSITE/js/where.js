@@ -3,23 +3,30 @@ $(document).ready(ready);
 
 function ready(){
     $.ajax({
-        method: 'POST',
+        method: 'GET',
         dataType: 'jsonp',
         crossDomain: true, //localhost purposes
-        url: "http://globogym.altervista.org/where.php", //Relative or absolute path to file.php file
+        url: "../php/where.php", //Relative or absolute path to file.php file
        
         success: function(response) {
-            console.log(JSON.parse(response));
-            var location=JSON.parse(response);
+           
+            var location=response;
+            console.log(location);
             var address="";
-            for(var i=0;i<courses.length;i++){
-                console.log(location[i].Address);
-                
-                el+="<div class='address'>"+location[i].Address+"</div>";             
-                console.log(el);
-            }
+            var byBus="";
+            var byTrain="";
+            var byCar="";
+           
+         address="<p class='lead'>"+location[0].Address+"</p>";             
+             byBus= "<p>"+location[0].ByBus+"</p>";  
+                byCar= "<p>"+location[0].ByCar+"</p>"; 
+            byTrain= "<p>"+location[0].ByTrain+"</p>"; 
             
-            //$(".address").html(el);
+           $(address).insertAfter("#address_gym");
+            $(byBus).insertAfter("#bus");
+            $(byCar).insertAfter("#car");
+            $(byTrain).insertAfter("#train");
+            
         },
         error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 alert("Status: " + textStatus); alert("Error: " + errorThrown); 
