@@ -6,7 +6,7 @@ function ready(){
         method: 'GET',
         dataType: 'jsonp',
         crossDomain: true, //localhost purposes
-        url: "../php/where.php", //Relative or absolute path to file.php file
+        url: "http://globogym.altervista.org/php/where.php", //Relative or absolute path to file.php file
        
         success: function(response) {
            
