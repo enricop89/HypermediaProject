@@ -10,11 +10,10 @@ document.getElementById("button_submit").addEventListener("click", function () {
     var message = $.trim($('#message').val());
     
    if(name!=="" && email!=="" && subject!=="" && message!=="")  {
-  alert("message sent");
-   
+    $.growl.notice({ message: "Message successfully sent" });
    }
 else
-    form.prepend( '<p style="color:red;"> Please compile the required fields</p>').fadeIn() 
+    $.growl.warning ({ message: "Please fill the required fields" });
 
 });
 
