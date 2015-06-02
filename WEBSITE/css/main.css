@@ -2598,3 +2598,18 @@ SHORTCODES PAGE CSS
     font-size: 40px;
     width: 100%;
 }
+
+/********************************
+**** COURSE CSS****
+*********************************/
+#instructor{
+    width: 100% !important;
+}
+#instructor_descr{
+    display:inline;
+}
+#instructor_div{
+    background-image: none;
+}
+
+
