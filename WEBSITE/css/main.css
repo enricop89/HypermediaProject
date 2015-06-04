@@ -115,8 +115,8 @@ a:focus {
 }
 
 body > section {
-  padding: 70px 0;
-  min-height: 70px;
+  padding: 20px 0; /*changed original values*/
+  min-height: 100px;
   overflow: hidden;
 }
 
@@ -2599,6 +2599,41 @@ SHORTCODES PAGE CSS
     width: 100%;
 }
 
+/****************
+****SPORT CSS****
+*****************/
+
+.breadcrumb {
+    background-color: #fff;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.breadcrumb > .active {
+    color: #343434;
+}
+
+#sport-photo img{
+    width: 100%;
+}
+
+#sport-instructors > #instr {
+    text-align: center;
+}
+
+#sport-instructors h2{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#sport-courses{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+#sport-courses > .btn-primary{
+    margin-left: 15px;
+}
 /********************************
 **** COURSE CSS****
 *********************************/
@@ -2611,5 +2646,3 @@ SHORTCODES PAGE CSS
 #instructor_div{
     background-image: none;
 }
-
-

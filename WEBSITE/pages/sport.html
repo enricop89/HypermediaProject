@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Globo-Gym</title>
+    <title>Sports | Globo-Gym</title>
 
-	<!-- core CSS -->
+    <!-- core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/font-awesome.min.css" rel="stylesheet">
-    <link href="../css/animate.min.css" rel="stylesheet">
     <link href="../css/prettyPhoto.css" rel="stylesheet">
+    <link href="../css/animate.min.css" rel="stylesheet">
     <link href="../css/main.css" rel="stylesheet">
     <link href="../css/responsive.css" rel="stylesheet">
-    <link href="../css/jquery.growl.css" rel="stylesheet" />
-    <!-- /core CSS-->
+    <!-- /core CSS -->
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -33,9 +32,9 @@
     <!-- /ICONS -->
 </head>
 
-<body class="homepage">
+<body>
 
-    <header id="header">
+     <header id="header">
         <div class="top-bar">
             <div class="container">
                 <div class="row">
@@ -104,50 +103,48 @@
         </nav><!--/nav-->
 
     </header><!--/header-->
-<section id="contact-page">
-        <div class="container">
-            <div class="center">
-                <h2 style="margin-top:10px;">Drop Your Message</h2>
-                <p class="address"></p>
-            </div>
-            <div class="row contact-wrap">
-                <div class="status alert alert-success" style="display: none"></div>
-                <form id="main-contact-form" class="contact-form" name="contact-form" >
-                    <div class="col-sm-5 col-sm-offset-1">
-                        <div class="form-group">
-                            <label>Name *</label>
-                            <input id="name" type="text"  class="form-control" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label>Email *</label>
-                            <input type="email" id="email" class="form-control" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="number" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Company Name</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-sm-5">
-                        <div class="form-group">
-                            <label>Subject *</label>
-                            <input type="text" id="subject" class="form-control" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label>Message *</label>
-                            <textarea name="message" id="message" required="required" class="form-control" rows="8">                                </textarea>
-                        </div>
-                        <div class="form-group">
-                            <input  id="button_submit" value="Submit"  type="button"  class="btn btn-primary btn-lg" required="required"></input>
-                        </div>
-                    </div>
-                </form>
-            </div><!--/.row-->
-        </div><!--/.container-->
-    </section><!--/#contact-page-->
+
+    <section id="sport-info">
+        <ol class="breadcrumb">
+            <li><a href="allCourseCategories.html">All Course Categories</a></li>
+            <li class="active">Sports</li>
+        </ol>
+        <div id="sport-description" class="col-md-6 wow fadeInDown">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ultrices neque ac vehicula sodales. Morbi ullamcorper, nibh non finibus consectetur, sem sem facilisis nulla, at porttitor nisl leo nec sem. Ut non luctus arcu, aliquam ultrices nibh. Integer a quam ac erat vestibulum varius. Integer varius semper pulvinar. Praesent facilisis mauris at dignissim viverra. Maecenas varius massa ac rhoncus commodo. Nunc orci enim, pulvinar quis massa eu, molestie dignissim mauris. Nunc vulputate id erat vel convallis. Vivamus consectetur, nunc ut accumsan gravida, purus massa eleifend lectus, non blandit lacus mi placerat tellus. Duis quis erat leo. Curabitur suscipit sit amet turpis eget interdum.<br>Mauris ultrices eu sapien id posuere. Fusce aliquet blandit nulla ut vehicula. Curabitur ullamcorper commodo mi eu imperdiet. Morbi dignissim, leo in efficitur molestie, justo nunc scelerisque mauris, tristique egestas eros ante a est. Nulla fringilla facilisis ante, et vulputate lacus finibus sed. Cras quis pretium nisl, quis consequat ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed molestie, nunc non finibus feugiat, ipsum nunc commodo nisi, sagittis vestibulum nisl felis eget metus. Aliquam suscipit semper semper. Pellentesque tellus nunc, mollis et sagittis molestie, molestie non nunc. Cras accumsan condimentum justo quis pretium. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla nec est a urna placerat faucibus. Nunc turpis purus, cursus ut varius sed, scelerisque convallis elit. Vivamus vel fermentum dui.</p>
+        </div>
+        <div id="sport-photo" class="col-md-6 wow fadeInDown">
+            <img src="../img/sports.jpg">
+        </div>
+    </section>
+
+    <section id="sport-instructors">
+        <h2 class="wow fadeInDown">Related Instructors:</h2>
+        <div class="col-md-3 col-sm-4 wow fadeInDown" id="instr">
+            <img src="../img/avatar.png" class="img-circle">
+            <h4>White Goodman</h4>
+        </div>
+        <div class="col-md-3 col-sm-4 wow fadeInDown" id="instr">
+            <img src="../img/avatar.png" class="img-circle">
+            <h4>White Goodman</h4>
+        </div>
+        <div class="col-md-3 col-sm-4 wow fadeInDown" id="instr">
+            <img src="../img/avatar.png" class="img-circle">
+            <h4>White Goodman</h4>
+        </div>
+        <div class="col-md-3 col-sm-4 wow fadeInDown" id="instr">
+            <img src="../img/avatar.png" class="img-circle">
+            <h4>White Goodman</h4>
+        </div>
+    </section>
+
+    <section id="sport-courses">
+        <h2 class="wow fadeInDown">Our Sports:</h2>
+        <a class="btn btn-primary col-md-2 col-xs-12 wow fadeInDown" href="404.html">Course 1</a>
+        <a class="btn btn-primary col-md-2 col-xs-12 wow fadeInDown" href="404.html">Course 2</a>
+        <a class="btn btn-primary col-md-2 col-xs-12 wow fadeInDown" href="404.html">Course 3</a>
+        <a class="btn btn-primary col-md-2 col-xs-12 wow fadeInDown" href="404.html">Course 4</a>
+        <a class="btn btn-primary col-md-2 col-xs-12 wow fadeInDown" href="404.html">Course 5</a>
+    </section>
 
     <footer id="footer" class="midnight-blue">
         <div class="container">
@@ -172,10 +169,7 @@
             </div>
         </div>
     </footer><!--/#footer-->
-
     <script src="../js/jquery.js"></script>
-    <script src="../js/jquery.growl.js" type="text/javascript"></script>
-    <script src="../js/contact.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.prettyPhoto.js"></script>
     <script src="../js/jquery.isotope.min.js"></script>

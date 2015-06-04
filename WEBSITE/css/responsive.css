@@ -99,7 +99,7 @@
 
 
 /* sm */
-@media (min-width: 700px) and (max-width: 991px) { <!-- Changed min-width from 768px to 700px -->
+@media (min-width: 700px) and (max-width: 991px) { /* Changed min-width from 768px to 700px */
   /* Make Navigation Toggle on Desktop Hover */
   .dropdown:hover .dropdown-menu {
       display: block;
@@ -116,7 +116,7 @@
     margin-left: 0;
   }
 
-<!-- PERSONALIZATION OF TEMPLATE-->
+/* PERSONALIZATION OF TEMPLATE */
   .logo {
     width: 150%;
   }
@@ -136,7 +136,11 @@
   #register img {
     width: 8vw;
   }
-<!-- /PERSONALIZATION OF TEMPLATE-->
+
+  #sport-courses > .btn-primary{
+    margin-left: 0px;
+  }
+/* END PERSONALIZATION OF TEMPLATE */
 
   #main-slider .carousel h1 {
     font-size: 25px;
@@ -208,7 +212,7 @@
 }
 
 /* xs */
-@media (max-width: 699px) { <!-- changed max-width from 767px to 699px -->
+@media (max-width: 699px) { /* changed max-width from 767px to 699px */
   .container > .navbar-header, .container > .navbar-collapse{
     margin-left: 0;
   }
@@ -229,7 +233,7 @@
     padding-bottom: 0;
   }
 
-<!-- PERSONALIZATION OF TEMPLATE-->
+/* PERSONALIZATION OF TEMPLATE */
   #page-title h1 {
       font-size: 8vw;
   }
@@ -248,8 +252,16 @@
 
   #category .btn-primary {
     font-size: 9vw;
-}
-<!-- /PERSONALIZATION OF TEMPLATE-->
+  }
+
+  #sport-instructors h2{
+    text-align: center;
+  }
+
+  #sport-courses > .btn-primary{
+    margin-left: 0px;
+  }
+/* END PERSONALIZATION OF TEMPLATE */
 
   #main-slider .carousel h1 {
     font-size: 25px;

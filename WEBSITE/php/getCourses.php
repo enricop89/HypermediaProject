@@ -8,7 +8,7 @@ $mysqli = new mysqli("localhost", "globogym", "", "my_globogym");
 
 if (mysqli_connect_errno()) { //verify connection
     echo "Error to connect to DBMS: ".mysqli_connect_error(); //notify error
-    exit(); //do nothing else 
+    exit(); //do nothing else
 }
 else {
     //echo "Successful connection"; // connection ok
@@ -16,9 +16,9 @@ else {
 	{
 		$id = mysql_real_escape_string($_REQUEST['id']);
 		$query = "SELECT * FROM Course WHERE Id = {$id}";
-		
+
 		$result = $mysqli->query($query);
-		
+
 		if($result->num_rows >0)
 		{
 			$myArray = array();//create an array

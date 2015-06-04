@@ -25,7 +25,7 @@ function Ready() {
         window.location.href = "http://globogym.altervista.org/404.html";
 
     }, 500);
-    
+
     console.log(parameter);
     $.ajax({
             method: "GET",
@@ -40,7 +40,7 @@ function Ready() {
                 //var course_center="";
                 for(i=0; i<course.length; i++){
                     course_header="<h2>"+course[i].Name+"</h2><p class='lead'>"+course[i].Description+"</p>";
-                   
+
                     $(".center").append(course_header);
                     $("#target-course").append("<h3>" +course[i].Target+ "</h3>");
                     $("#room-course").append("<h3>" +course[i].Room+ "</h3>");
@@ -65,8 +65,8 @@ function Ready() {
                 var schedule = response;
                 var table="<thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>"
                 for(i=0; i<schedule.length; i++){
-                 table+="<tbody><td>" + schedule[i].Monday + "</td>" + "<td>" + schedule[i].Tuesday + "</td>" +  "<td>" + schedule[i].Wednesday + "</td>" + "<td>" + schedule[i].Thursday + "</td>" +  "<td>" + schedule[i].Friday + "</td>"  + "<td>" + schedule[i].Saturday + "</td>"  + "<td>" + schedule[i].Sunday + "</td>" + "</tbody>"   
-                   
+                 table+="<tbody><td>" + schedule[i].Monday + "</td>" + "<td>" + schedule[i].Tuesday + "</td>" +  "<td>" + schedule[i].Wednesday + "</td>" + "<td>" + schedule[i].Thursday + "</td>" +  "<td>" + schedule[i].Friday + "</td>"  + "<td>" + schedule[i].Saturday + "</td>"  + "<td>" + schedule[i].Sunday + "</td>" + "</tbody>"
+
                     console.log(table);
                     $("#schedule_table").append(table);
                 }
