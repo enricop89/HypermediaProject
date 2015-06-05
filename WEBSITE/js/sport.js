@@ -54,7 +54,7 @@ function Ready(){
             var instructors = response;
             var el="";
             for(i=0; i<instructors.length; i++){
-                el="<div class='col-md-3 col-sm-4 wow fadeInDown' id='instr'><img src="+instructors[i].InstructorImg+" class='img-circle'><h4>"+instructors[i].InstructorName+"</h4></div>"
+                el="<div class='col-md-3 col-sm-4 wow fadeInDown' id='instr'><a href="+instructors[i].InstructorLink+"><img src="+instructors[i].InstructorImg+" class='img-circle'><h4>"+instructors[i].InstructorName+"</h4></a></div>"
                 $("#sport-instructors").append(el);
             }
         },

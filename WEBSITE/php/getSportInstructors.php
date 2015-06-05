@@ -15,7 +15,7 @@ else {
     //echo "Successful connection"; // connection ok
 
     // extract results mysqli_result::fetch_array
-    $query = "SELECT DISTINCT InstructorName, InstructorImg FROM Sport";
+    $query = "SELECT DISTINCT InstructorName, InstructorImg, InstructorLink FROM Sport";
 
     //query execution
     $result = $mysqli->query($query);

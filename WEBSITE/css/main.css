@@ -2634,6 +2634,10 @@ SHORTCODES PAGE CSS
 #sport-courses > .btn-primary{
     margin-left: 15px;
 }
+
+.img-circle{
+    border: 5px solid;
+}
 /********************************
 **** COURSE CSS****
 *********************************/
