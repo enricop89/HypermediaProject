@@ -24,9 +24,9 @@ function Ready() {
         // Move to a new location or you can do something else
         window.location.href = "http://globogym.altervista.org/404.html";
 
-    }, 500);
+    }, 200);
 
-    console.log(parameter);
+   
     $.ajax({
             method: "GET",
             dataType: "jsonp", //type of data
@@ -34,7 +34,6 @@ function Ready() {
             url: "http://globogym.altervista.org/php/getCourses.php" + parameter, //Relative or absolute path to                                                                                     file.php file
             //data: {number:value},
             success: function(response) {
-                console.log(response);
                 var course = response;
                 var course_header="";
                 //var course_center="";
@@ -48,6 +47,15 @@ function Ready() {
                     $("#item1").attr("style","background-image: url(../img/" + course[i].ImgLink1 + ")");
                     $("#item2").attr("style","background-image: url(../img/" + course[i].ImgLink2 + ")");
                     $("#item3").attr("style","background-image: url(../img/" + course[i].ImgLink3 + ")");
+                    /*redirect to the course category*/
+                    var course_category_link= "http://globogym.altervista.org/" + course[i].CategoryId.toLowerCase() + ".html";
+                    
+                    document.getElementById("category_icon").addEventListener("click", function () {
+
+                        window.location.href = course_category_link;
+
+                    });
+                     $("#category_icon").attr("style","cursor:pointer");
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
@@ -61,20 +69,20 @@ function Ready() {
             url: "http://globogym.altervista.org/php/getSchedule.php" + parameter, //Relative or absolute path to                                                                                     file.php file
             //data: {number:value},
             success: function(response) {
-                console.log(response);
                 var schedule = response;
                 var table="<thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>"
                 for(i=0; i<schedule.length; i++){
                  table+="<tbody><td>" + schedule[i].Monday + "</td>" + "<td>" + schedule[i].Tuesday + "</td>" +  "<td>" + schedule[i].Wednesday + "</td>" + "<td>" + schedule[i].Thursday + "</td>" +  "<td>" + schedule[i].Friday + "</td>"  + "<td>" + schedule[i].Saturday + "</td>"  + "<td>" + schedule[i].Sunday + "</td>" + "</tbody>"
 
-                    console.log(table);
-                    $("#schedule_table").append(table);
+                 $("#schedule_table").append(table);
                 }
             },
             error: function(XMLHttpRequest, textStatus, errorThrown) {
                 alert("Status: " + textStatus); alert("Error: " + errorThrown);
             }
         });
-
+    
+    
+    
 }
 
