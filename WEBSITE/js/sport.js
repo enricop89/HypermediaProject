@@ -23,7 +23,7 @@ function Ready(){
         method: "GET",
         dataType: "jsonp", //type of data
         crossDomain: true, //localhost purposes
-        url: "../php/getSportInfo.php", //Relative or absolute path to file.php file
+        url: "http://globogym.altervista.org/php/getSportInfo.php", //Relative or absolute path to file.php file
         data: {id:7},
         success: function(response){
             var info = response;
