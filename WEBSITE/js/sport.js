@@ -48,7 +48,7 @@ function Ready(){
         method: "GET",
         dataType: "jsonp", //type of data
         crossDomain: true, //localhost purposes
-        url: "../php/getSportInstructors.php", //Relative or absolute path to file.php file
+        url: "http://globogym.altervista.org/php/getSportInstructors.php", //Relative or absolute path to file.php file
         //data: {number:value},
         success: function(response){
             var instructors = response;
@@ -70,7 +70,7 @@ function Ready(){
         method: "GET",
         dataType: "jsonp", //type of data
         crossDomain: true, //localhost purposes
-        url: "../php/getSportCourses.php", //Relative or absolute path to file.php file
+        url: "http://globogym.altervista.org/php/getSportCourses.php", //Relative or absolute path to file.php file
         //data: {number:value},
         success: function(response){
             var courses = response;
