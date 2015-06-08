@@ -2626,18 +2626,33 @@ SHORTCODES PAGE CSS
     padding-left: 15px;
 }
 
-#sport-courses{
+#sport-courses,
+#instructor-courses{
     padding-right: 15px;
     padding-left: 15px;
 }
 
-#sport-courses > .btn-primary{
+#sport-courses > .btn-primary,
+#instructor-courses > .btn-primary{
     margin-left: 15px;
 }
 
 .img-circle{
     border: 5px solid;
 }
+
+#instructor-photo
+{
+	padding: 10px;
+}
+
+#instructor-photo img
+{
+	margin: auto;
+	display: block;
+	width: 75%;
+}
+
 /********************************
 **** COURSE CSS****
 *********************************/
