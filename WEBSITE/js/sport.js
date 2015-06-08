@@ -23,7 +23,7 @@ function Ready(){
         method: "GET",
         dataType: "jsonp", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://globogym.altervista.org/php/getSportInfo.php", //Relative or absolute path to file.php file
+        url: "http://globogym.altervista.org/php/getCategoryInfo.php", //Relative or absolute path to file.php file
         data: {id:7},
         success: function(response){
             var info = response;
@@ -48,13 +48,15 @@ function Ready(){
         method: "GET",
         dataType: "jsonp", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://globogym.altervista.org/php/getSportInstructors.php", //Relative or absolute path to file.php file
+        url: "http://globogym.altervista.org/php/getCategoryInstructors.php?id=7", //Relative or absolute path to file.php file
         //data: {number:value},
         success: function(response){
             var instructors = response;
             var el="";
             for(i=0; i<instructors.length; i++){
-                el="<div class='col-md-3 col-sm-4 wow fadeInDown' id='instr'><a href="+instructors[i].InstructorLink+"><img src="+instructors[i].InstructorImg+" class='img-circle'><h4>"+instructors[i].InstructorName+"</h4></a></div>"
+                var fullName = instructors[i].Name + " " + instructors[i].Surname;
+                var link = "instructor.html?id="+instructors[i].InstructorId
+                el="<div class='col-md-3 col-sm-4 wow fadeInDown' id='instr'><a href="+link+"><img src="+instructors[i].ImgLink+" class='img-circle'><h4>"+fullName+"</h4></a></div>"
                 $("#sport-instructors").append(el);
             }
         },
@@ -70,13 +72,13 @@ function Ready(){
         method: "GET",
         dataType: "jsonp", //type of data
         crossDomain: true, //localhost purposes
-        url: "http://globogym.altervista.org/php/getSportCourses.php", //Relative or absolute path to file.php file
+        url: "http://globogym.altervista.org/php/getCategoryCourses.php?id=7", //Relative or absolute path to file.php file
         //data: {number:value},
         success: function(response){
             var courses = response;
             var el="";
             for(i=0; i<courses.length; i++){
-                el="<a class='btn btn-primary col-md-2 col-xs-12 wow fadeInDown' href="+courses[i].CourseLink+">"+courses[i].CourseName+"</a>"
+                el="<a class='btn btn-primary col-md-2 col-xs-12 wow fadeInDown' href=course.html?id="+courses[i].Id+">"+courses[i].Name+"</a>"
                 $("#sport-courses").append(el);
             }
         },

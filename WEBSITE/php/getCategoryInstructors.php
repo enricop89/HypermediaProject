@@ -1,4 +1,5 @@
 <?php
+
 //get all the course from db and reply using json structure
 header("Access-Control-Allow-Origin: *");
 //echo "I'm the php";
@@ -12,27 +13,29 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     //echo "Successful connection"; // connection ok
+
 	if (isset($_REQUEST['id']))
 	{
 		$id = mysql_real_escape_string($_REQUEST['id']);
-		$query = "SELECT * FROM Course WHERE InstructorId = {$id}";
+		// extract results mysqli_result::fetch_array
+		$query = "SELECT DISTINCT Instructor.InstructorId, Instructor.Name, Instructor.Surname, Instructor.ImgLink FROM Course, Instructor WHERE Course.CategoryId = {$id} AND Course.InstructorId = Instructor.InstructorId";
 
+		//query execution
 		$result = $mysqli->query($query);
 
-		$myArray = array();//create an array
+		if ($result == false)
+			echo $mysqli->error."[$sql]";
+
+		$myArray = array(); //create an array to store result
 		while($row = $result->fetch_array(MYSQL_ASSOC)) {
-			array_push($myArray, array_map('utf8_encode', $row));
+				array_push($myArray, array_map('utf8_encode', $row));
 		}
 		$callback = $_GET['callback'];
 		$json = json_encode($myArray);
 		echo "{$callback}({$json})";
 	}
-	else
-	{
-		$callback = $_GET['callback'];
-		$json = json_encode(array());
-		echo "{$callback}({$json})";
-	}
+    //close connection
+    $mysqli->close();
 }
 
 

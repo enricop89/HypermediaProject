@@ -1,4 +1,5 @@
 <?php
+
 //get all the course from db and reply using json structure
 header("Access-Control-Allow-Origin: *");
 //echo "I'm the php";
@@ -12,14 +13,19 @@ if (mysqli_connect_errno()) { //verify connection
 }
 else {
     //echo "Successful connection"; // connection ok
+
+
 	if (isset($_REQUEST['id']))
 	{
 		$id = mysql_real_escape_string($_REQUEST['id']);
-		$query = "SELECT * FROM Course WHERE InstructorId = {$id}";
 
+        // extract results mysqli_result::fetch_array
+		$query = "SELECT Course.Id, Course.Name FROM Course WHERE Course.CategoryId = {$id}";
+
+        //query execution
 		$result = $mysqli->query($query);
 
-		$myArray = array();//create an array
+		$myArray = array();//create an array to store result
 		while($row = $result->fetch_array(MYSQL_ASSOC)) {
 			array_push($myArray, array_map('utf8_encode', $row));
 		}
@@ -27,12 +33,10 @@ else {
 		$json = json_encode($myArray);
 		echo "{$callback}({$json})";
 	}
-	else
-	{
-		$callback = $_GET['callback'];
-		$json = json_encode(array());
-		echo "{$callback}({$json})";
-	}
+
+
+    //close connection
+    $mysqli->close();
 }
 
 

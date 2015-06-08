@@ -32,7 +32,7 @@
     <!-- /ICONS -->
 </head>
 
-<body>
+<body class="homepage">
 
     <header id="header">
         <div class="top-bar">
@@ -59,7 +59,7 @@
                 <div class="col-xs-2">
                     <a href="index.html"><img class="logo" src="../img/logo.svg" alt="logo"></a>
                 </div>
-                <div id="page-title" class="col-sm-8 col-xs-10">
+				<div id="page-title" class="col-sm-8 col-xs-10">
                     <h1>Globo-Gym</h1>
                     <h3>The Gym for all your fitness needs</h3>
                 </div>
@@ -105,24 +105,95 @@
     </header><!--/header-->
 
 
-    <section id="all-instructors">
-        <div id="instructors-list-container" class="col-md-6">
-            <h1 class="wow fadeInDown">All Instructors</h2>
-            <ul id="instructors-list"></ul>
-        </div>
-        <div id="instructors-month-container" class="col-md-6">
-            <h1 class="wow fadeInDown">Instructors of the Month</h1>
-            <ul id="instructors-month"></ul>
-        </div>
-    </section>
+    <section id="blog" class="container">
+        <div class="center">
 
-    <footer id="footer" class="midnight-blue">
+
+        </div>
+        <div class="row" >
+            <div class="features">
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-bullhorn"></i>
+                            <h2 id="target-course">Target</h2>
+
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-crosshairs"></i>
+                            <h2 id="room-course">Room</h2>
+
+                        </div>
+                    </div><!--/.col-md-4-->
+
+                    <div class="col-md-4 col-sm-6 wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                        <div class="feature-wrap">
+                            <i class="fa fa-list" id="category_icon"></i>
+                            <h2 id="category-course">Course category</h2>
+
+                        </div>
+                    </div><!--/.col-md-4-->
+            </div>
+
+        </div>
+
+        <div class="row">
+                <div class="col-md-4 wow fadeInDown" id="instructor">
+                    <div class="clients-comments text-center" id="instructor_div">
+                        <img src="../img/course2instructor.jpg" class="img-circle" alt="">
+                        <h3 id="instructor_descr">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</h3>
+                        <h4><span>-John Doe /</span>  Director of corlate.com</h4>
+                    </div>
+                </div>
+        </div>
+        <div class="table-responsive">
+        <table class="table" id="schedule_table">
+
+        </table>
+        </div>
+        </section><!--/#blog-->
+
+
+
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <div id="item1" class="item active" style="background-image: url(../img/dodgeball3.jpg)">
+
+                </div><!--/.item-->
+
+                <div  id="item2" class="item" style="background-image: url(../img/dodgeball4.jpeg)">
+
+                </div><!--/.item-->
+
+                <div id="item3" class="item" style="background-image: url(../img/dodgeball5.jpg)">
+
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+ <footer id="footer" class="midnight-blue">
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
                     <p>Check us out on these social sites!</p>
                     <ul>
-                        <li><a href="#"><img src="../img/social/facebook.png" onmouseover="this.src='../img/social/facebooka.png';" onmouseout="this.src='../img/social/facebook.png';" /></a>  </li>
+                        <li><a href="#"><img src="../img/social/facebook.png" onmouseover="this.src='../img/social/facebooka.png';" onmouseout="this.src='../img/social/facebook.png';" /></a></li>
                         <li><a href="#"><img src="../img/social/Instagram.png" onmouseover="this.src='../img/social/Instagrama.png';" onmouseout="this.src='../img/social/Instagram.png';" /></a></li>
                         <li><a href="#"><img src="../img/social/Twitter.png" onmouseover="this.src='../img/social/Twittera.png';" onmouseout="this.src='../img/social/Twitter.png';" /></a></li>
                         <li><a href="#"><img src="../img/social/youtube.png" onmouseover="this.src='../img/social/youtubea.png';" onmouseout="this.src='../img/social/youtube.png';" /></a></li>
@@ -141,11 +212,11 @@
     </footer><!--/#footer-->
 
     <script src="../js/jquery.js"></script>
+    <script src="../js/getCourses.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/jquery.prettyPhoto.js"></script>
     <script src="../js/jquery.isotope.min.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/wow.min.js"></script>
-    <script src="../js/instructors.js"></script>
 </body>
 </html>
