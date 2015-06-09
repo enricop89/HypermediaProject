@@ -22,12 +22,12 @@ function ready(){
             var byTrain="";
             var byCar="";
             
-            set_latlong(location[0].Lat,location[0].Long)
+            set_latlong(location.Lat,location.Long)
 
-         address="<p class='lead'>"+location[0].Address+"</p>";
-             byBus= "<p>"+location[0].ByBus+"</p>";
-                byCar= "<p>"+location[0].ByCar+"</p>";
-            byTrain= "<p>"+location[0].ByTrain+"</p>";
+         address="<p class='lead'>"+location.Address+"</p>";
+             byBus= "<p>"+location.ByBus+"</p>";
+                byCar= "<p>"+location.ByCar+"</p>";
+            byTrain= "<p>"+location.ByTrain+"</p>";
 
            $(address).insertAfter("#address_gym");
             $(byBus).insertAfter("#bus");

@@ -45,18 +45,18 @@ function Ready() {
             success: function(response) {
                 var course = response;
                 var course_header="";
-                category_id="?id=" + setUrlParameter(course[0].CategoryId);
-                instructor_id="?id=" + setUrlParameter(course[0].InstructorId);
+                category_id="?id=" + setUrlParameter(course.CategoryId);
+                instructor_id="?id=" + setUrlParameter(course.InstructorId);
                
-                    course_header="<h2>"+course[0].Name+"</h2><p class='lead'>"+course[0].Description+"</p>";
+                    course_header="<h2>"+course.Name+"</h2><p class='lead'>"+course.Description+"</p>";
                     $("#allcoursesId").attr("href","./allCourses.html");
-                    $("#course-name").html(course[0].Name);
+                    $("#course-name").html(course.Name);
                     $(".center").append(course_header);
-                    $("#target-course").append("<h3 style='text-transform:uppercase;'>" +course[0].Target+ "</h3>");
-                    $("#room-course").append("<h3 style='text-transform:uppercase;'>" +course[0].Room+ "</h3>");
-                    $("#item1").attr("style","background-image: url(" + course[0].ImgLink1 + ")");
-                    $("#item2").attr("style","background-image: url(" + course[0].ImgLink2 + ")");
-                    $("#item3").attr("style","background-image: url(" + course[0].ImgLink3 + ")");
+                    $("#target-course").append("<h3 style='text-transform:uppercase;'>" +course.Target+ "</h3>");
+                    $("#room-course").append("<h3 style='text-transform:uppercase;'>" +course.Room+ "</h3>");
+                    $("#item1").attr("style","background-image: url(" + course.ImgLink1 + ")");
+                    $("#item2").attr("style","background-image: url(" + course.ImgLink2 + ")");
+                    $("#item3").attr("style","background-image: url(" + course.ImgLink3 + ")");
                 
                 /***get category course***/
                 $.ajax({
@@ -68,10 +68,11 @@ function Ready() {
                             success: function(response) {
                                 var category_object = response;
                                 
+                                
 
-                                    $("#category-course").append("<h3 style='text-transform:uppercase;'>" +category_object[0].Description  + "</h3>");
+                                    $("#category-course").append("<h3 style='text-transform:uppercase;'>" +category_object.Description  + "</h3>");
                                 /*redirect to the course category*/
-                                    var course_category_link= "http://globogym.altervista.org/" +                       category_object[0].Description.substring(0,category_object[0].Description.length-1).toLowerCase() + ".html";
+                                    var course_category_link= category_object.LinkToPage ;
                              
 
                                     document.getElementById("category_icon").addEventListener("click", function () {
@@ -133,7 +134,7 @@ function Ready() {
                 var schedule = response;
                 var table="<thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>"
                
-                 table+="<tbody><td>" + schedule[0].Monday + "</td>" + "<td>" + schedule[0].Tuesday + "</td>" +  "<td>" + schedule[0].Wednesday + "</td>" + "<td>" + schedule[0].Thursday + "</td>" +  "<td>" + schedule[0].Friday + "</td>"  + "<td>" + schedule[0].Saturday + "</td>"  + "<td>" + schedule[0].Sunday + "</td>" + "</tbody>"
+                 table+="<tbody><td>" + schedule.Monday + "</td>" + "<td>" + schedule.Tuesday + "</td>" +  "<td>" + schedule.Wednesday + "</td>" + "<td>" + schedule.Thursday + "</td>" +  "<td>" + schedule.Friday + "</td>"  + "<td>" + schedule.Saturday + "</td>"  + "<td>" + schedule.Sunday + "</td>" + "</tbody>"
 
                  $("#schedule_table").append(table);
                 

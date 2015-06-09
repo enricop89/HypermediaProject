@@ -22,13 +22,10 @@ else {
 
     //if there are data available
     if($result->num_rows >0){
-        $myArray = array(); //create an array to store result
-        while($row = $result->fetch_array(MYSQL_ASSOC)) {
-                array_push($myArray, array_map('utf8_encode', $row));
-        }
+     
         $callback = $_GET['callback'];
-        $json = json_encode($myArray);
-		echo "{$callback}({$json})";
+			$json = json_encode($result->fetch_array(MYSQL_ASSOC));
+			echo "{$callback}({$json})";
     }
 
     //free result

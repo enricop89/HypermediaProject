@@ -21,12 +21,8 @@ else {
 
 		if($result->num_rows >0)
 		{
-			$myArray = array();//create an array
-			while($row = $result->fetch_array(MYSQL_ASSOC)) {
-				array_push($myArray, array_map('utf8_encode', $row));
-			}
 			$callback = $_GET['callback'];
-			$json = json_encode($myArray);
+			$json = json_encode($result->fetch_array(MYSQL_ASSOC));
 			echo "{$callback}({$json})";
 		}
 	}
