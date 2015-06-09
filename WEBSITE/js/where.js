@@ -1,5 +1,10 @@
 $(document).ready(ready);
 
+var latitude,longitude;
+function set_latlong(x,y){
+    latitude = parseFloat(x);
+    longitude = parseFloat(y);
+}
 
 function ready(){
     $.ajax({
@@ -16,6 +21,8 @@ function ready(){
             var byBus="";
             var byTrain="";
             var byCar="";
+            
+            set_latlong(location[0].Lat,location[0].Long)
 
          address="<p class='lead'>"+location[0].Address+"</p>";
              byBus= "<p>"+location[0].ByBus+"</p>";

@@ -38,7 +38,7 @@
     <script type="text/javascript">
       function initialize() {
         var mapOptions = {
-          center: { lat: 34.03636, lng: -118.26040},
+          center: { lat: latitude, lng: longitude},
           zoom: 12
         };
           var description="Here at Globo Gym, we understand that \"Ugliness\" and \"Fatness\" are genetic disorders, much like baldness or necrophilia, and it's only your fault if you don't hate yourself enough to do something about it.And that's where we come in";
@@ -52,7 +52,7 @@
     });
 
           var marker = new google.maps.Marker({
-              position: new google.maps.LatLng(34.03636 ,-118.26040),
+              position: new google.maps.LatLng(latitude ,longitude),
               map: map,
               title: 'Globo Gym!'
   });
