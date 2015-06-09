@@ -57,11 +57,11 @@ function Ready()
 		'				 <li class="dropdown">'+
 		'					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Courses <i class="fa fa-angle-down"></i></a>'+
 		'					<ul class="dropdown-menu">'+
-		'						<li><a href="404.html">List of All Courses</a></li>'+
+		'						<li><a href="allCourses.html">List of All Courses</a></li>'+
 		'						<li><a href="allCourseCategories.html">All Course Categories</a></li>'+
 		'					</ul>'+
 		'				</li>'+
-		'				<li><a href="404.html">Instructors</a></li>'+
+		'				<li><a href="instructors.html">Instructors</a></li>'+
 		'				<li><a href="contactus.html">Contact Us</a></li>'+
 		'			</ul>'+
 		'		</div>'+
