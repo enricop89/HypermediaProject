@@ -23,6 +23,7 @@ return param;
 function Ready() {
     var parameter="";
     var category_id="";//salvo parametro per category_id
+    var instructor_id="";//salvo parametro per instructor_id
     
     if(GetURLParameter('id')!==null && GetURLParameter('id')!==undefined)
         parameter= "?id=" + GetURLParameter('id');
@@ -45,15 +46,17 @@ function Ready() {
                 var course = response;
                 var course_header="";
                 category_id="?id=" + setUrlParameter(course[0].CategoryId);
-                console.log(category_id);
+                instructor_id="?id=" + setUrlParameter(course[0].InstructorId);
+               
                     course_header="<h2>"+course[0].Name+"</h2><p class='lead'>"+course[0].Description+"</p>";
-
+                    $("#allcoursesId").attr("href","./allCourses.html");
+                    $("#course-name").html(course[0].Name);
                     $(".center").append(course_header);
                     $("#target-course").append("<h3 style='text-transform:uppercase;'>" +course[0].Target+ "</h3>");
                     $("#room-course").append("<h3 style='text-transform:uppercase;'>" +course[0].Room+ "</h3>");
-                    $("#item1").attr("style","background-image: url(./img/" + course[0].ImgLink1 + ")");
-                    $("#item2").attr("style","background-image: url(./img/" + course[0].ImgLink2 + ")");
-                    $("#item3").attr("style","background-image: url(./img/" + course[0].ImgLink3 + ")");
+                    $("#item1").attr("style","background-image: url(" + course[0].ImgLink1 + ")");
+                    $("#item2").attr("style","background-image: url(" + course[0].ImgLink2 + ")");
+                    $("#item3").attr("style","background-image: url(" + course[0].ImgLink3 + ")");
                 
                 /***get category course***/
                 $.ajax({
@@ -83,20 +86,42 @@ function Ready() {
                                 alert("Status: " + textStatus); alert("Error: " + errorThrown);
                             }
                         });
-/***finish category course***/
-                    
+                /***finish category course***/
                 
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("Status: " + textStatus); alert("Error: " + errorThrown);
-            }
-        });
-    
-    
-   
-    
-    
-    
+                /***get instructor ***/
+                $.ajax({
+                            method: "GET",
+                            dataType: "jsonp", //type of data
+                            crossDomain: true,  //localhost purposes
+                            url: "http://globogym.altervista.org/php/instructor.php" + instructor_id , //Relative                                                                      or absolute path to file.php file
+
+                            success: function(response) {
+                                var instructor_object = response;
+                                
+                                
+
+                                    $("#instructor_div").append("<img id='instructor_icon' src=" + instructor_object.ImgLink +" class='img-circle'>");
+                                $("#instructor_div").append(" <h4><span>" + instructor_object.Name + instructor_object.Surname  + "</span></h4>");
+                               
+                                
+                                /*redirect to the instructor*/
+                                    var instructor_link= "http://globogym.altervista.org/instructor.html?id=" + instructor_object.InstructorId;
+                             
+
+                                    document.getElementById("instructor_icon").addEventListener("click", function () {
+
+                                        window.location.href = instructor_link;
+
+                                    });
+                                     $("#instructor_icon").attr("style","cursor:pointer");
+
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+                            }
+                        });
+/***finish instructor ***/
+          
     $.ajax({
             method: "GET",
             dataType: "jsonp", //type of data
@@ -117,6 +142,17 @@ function Ready() {
                 alert("Status: " + textStatus); alert("Error: " + errorThrown);
             }
         });
+    
+    
+    
+
+ }, //succes of the first ajax
+     
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            }
+}); //close the first ajax request;
+        
     
     
     
