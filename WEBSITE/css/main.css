@@ -2595,6 +2595,7 @@ SHORTCODES PAGE CSS
 *********************************/
 
 #category .btn-primary {
+	text-transform: uppercase;
     font-size: 40px;
     width: 100%;
 }
@@ -2653,10 +2654,13 @@ SHORTCODES PAGE CSS
 	width: 75%;
 }
 
-#instructors-list h2
+#instructors-list h2,
+#courses-list h2
 {
 	display: inline;
 }
+
+
 
 #instructors-list img.img-circle
 {
@@ -2666,6 +2670,12 @@ SHORTCODES PAGE CSS
 }
 
 #all-instructors h1
+{
+    color:black;
+	margin-left: 20px;
+}
+
+#all-courses h1
 {
     color:black;
 	margin-left: 20px;

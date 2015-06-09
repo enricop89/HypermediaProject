@@ -15,7 +15,7 @@ else {
 	if (isset($_REQUEST['id']))
 	{
 		$id = mysql_real_escape_string($_REQUEST['id']);
-		$query = "SELECT * FROM Course WHERE InstructorId = {$id}";
+		$query = "SELECT * FROM Course, CourseCategory WHERE InstructorId = {$id} AND Course.CategoryId = CourseCategory.CCategoryId";
 
 		$result = $mysqli->query($query);
 

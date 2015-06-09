@@ -16,7 +16,7 @@ function GetURLParameter(sParam){
 function Ready(){
     
 	var parameter = "";
-	if(GetURLParameter('id')!==null || GetURLParameter('id')!==undefined)
+	if(GetURLParameter('id')!==null && GetURLParameter('id')!==undefined)
 	{
         var parameter = "?id=" + GetURLParameter('id');
 	

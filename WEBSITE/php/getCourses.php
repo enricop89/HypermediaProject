@@ -32,8 +32,12 @@ else {
 	}
 	else
 	{
-		# extract results mysqli_result::fetch_array
-		$query = "SELECT * FROM Course";
+		$query = "";
+		if (!isset($_REQUEST['category']))
+			$query = "SELECT * FROM Course";
+		else
+			$query = "SELECT * FROM Course, CourseCategory WHERE Course.CategoryId = CourseCategory.CCategoryId";
+		
 		//query execution
 		$result = $mysqli->query($query);
 		//if there are data available

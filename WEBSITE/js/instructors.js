@@ -35,5 +35,4 @@ function Ready(){
 				alert("Status: " + textStatus); alert("Error: " + errorThrown);
 			}
 	})
-	
 }
