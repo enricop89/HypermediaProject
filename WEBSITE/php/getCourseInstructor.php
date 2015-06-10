@@ -20,7 +20,7 @@ else {
 		$id = mysql_real_escape_string($_REQUEST['id']);
 
         // extract results mysqli_result::fetch_array
-		$query = "SELECT Schedule.Monday,Schedule.Tuesday,Schedule.Wednesday,Schedule.Thursday,Schedule.Friday,Schedule.Saturday,Schedule.Sunday  FROM Schedule,Course WHERE Schedule.ScheduleId = Course.ScheduleId AND Course.Id= {$id}";
+		$query = "SELECT Instructor.Name,Instructor.Surname,Instructor.InstructorId, Instructor.ImgLink  FROM Instructor,Course WHERE Instructor.InstructorId = Course.InstructorId AND Course.Id= {$id}";
 
         //query execution
 		$result = $mysqli->query($query);

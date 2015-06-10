@@ -56,28 +56,7 @@ function Ready() {
                     $("#item2").attr("style","background-image: url(" + course.ImgLink2 + ")");
                     $("#item3").attr("style","background-image: url(" + course.ImgLink3 + ")");
                 
-        
-          
-    $.ajax({
-            method: "GET",
-            dataType: "jsonp", //type of data
-            crossDomain: true,  //localhost purposes
-            url: "http://globogym.altervista.org/php/getSchedule.php" + parameter, //Relative or absolute path to                                                                                     file.php file
-            //data: {number:value},
-            success: function(response) {
-               
-                var schedule = response;
-                var table="<thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>"
-               
-                 table+="<tbody><td>" + schedule.Monday + "</td>" + "<td>" + schedule.Tuesday + "</td>" +  "<td>" + schedule.Wednesday + "</td>" + "<td>" + schedule.Thursday + "</td>" +  "<td>" + schedule.Friday + "</td>"  + "<td>" + schedule.Saturday + "</td>"  + "<td>" + schedule.Sunday + "</td>" + "</tbody>"
-
-                 $("#schedule_table").append(table);
-                
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("Status: " + textStatus); alert("Error: " + errorThrown);
-            }
-        });
+     
     
     
     
@@ -159,7 +138,30 @@ function Ready() {
                         });
 /***finish instructor ***/
     
+   /****schedule ajax*****/
+          
+    $.ajax({
+            method: "GET",
+            dataType: "jsonp", //type of data
+            crossDomain: true,  //localhost purposes
+            url: "http://globogym.altervista.org/php/getSchedule.php" + parameter, //Relative or absolute path to                                                                                     file.php file
+            //data: {number:value},
+            success: function(response) {
+               
+                var schedule = response;
+                var table="<thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>"
+               
+                 table+="<tbody><td>" + schedule.Monday + "</td>" + "<td>" + schedule.Tuesday + "</td>" +  "<td>" + schedule.Wednesday + "</td>" + "<td>" + schedule.Thursday + "</td>" +  "<td>" + schedule.Friday + "</td>"  + "<td>" + schedule.Saturday + "</td>"  + "<td>" + schedule.Sunday + "</td>" + "</tbody>"
+
+                 $("#schedule_table").append(table);
+                
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            }
+        });   
     
+     /****schedule ajax*****/
     
     
 }
