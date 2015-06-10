@@ -1,6 +1,6 @@
 $(document).ready(Ready);
 
-function GetURLParameter(sParam){
+function GetURLParameter(sParam){ //function to get URLParamter
 
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
@@ -13,10 +13,6 @@ function GetURLParameter(sParam){
 
 }
 
-function setUrlParameter(param){
-    
-return param;
-}
 
 
 
@@ -45,8 +41,10 @@ function Ready() {
             success: function(response) {
                 var course = response;
                 var course_header="";
-                category_id="?id=" + setUrlParameter(course.CategoryId);
-                instructor_id="?id=" + setUrlParameter(course.InstructorId);
+                /*category_id="?id=" + setUrlParameter(course.CategoryId);
+                instructor_id="?id=" + setUrlParameter(course.InstructorId);*/
+             
+                
                
                     course_header="<h2>"+course.Name+"</h2><p class='lead'>"+course.Description+"</p>";
                     $("#allcoursesId").attr("href","./allCourses.html");
@@ -58,12 +56,48 @@ function Ready() {
                     $("#item2").attr("style","background-image: url(" + course.ImgLink2 + ")");
                     $("#item3").attr("style","background-image: url(" + course.ImgLink3 + ")");
                 
-                /***get category course***/
+        
+          
+    $.ajax({
+            method: "GET",
+            dataType: "jsonp", //type of data
+            crossDomain: true,  //localhost purposes
+            url: "http://globogym.altervista.org/php/getSchedule.php" + parameter, //Relative or absolute path to                                                                                     file.php file
+            //data: {number:value},
+            success: function(response) {
+               
+                var schedule = response;
+                var table="<thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>"
+               
+                 table+="<tbody><td>" + schedule.Monday + "</td>" + "<td>" + schedule.Tuesday + "</td>" +  "<td>" + schedule.Wednesday + "</td>" + "<td>" + schedule.Thursday + "</td>" +  "<td>" + schedule.Friday + "</td>"  + "<td>" + schedule.Saturday + "</td>"  + "<td>" + schedule.Sunday + "</td>" + "</tbody>"
+
+                 $("#schedule_table").append(table);
+                
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            }
+        });
+    
+    
+    
+
+ }, //succes of the course ajax
+     
+            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                alert("Status: " + textStatus); alert("Error: " + errorThrown);
+            }
+}); //close the course ajax request;
+    
+    console.log(window.instructor_id,window.category_id);
+    
+    
+     /***get category course***/
                 $.ajax({
                             method: "GET",
                             dataType: "jsonp", //type of data
                             crossDomain: true,  //localhost purposes
-                            url: "http://globogym.altervista.org/php/getCourseCategory.php" + category_id , //Relative                                                                      or absolute path to file.php file
+                            url: "http://globogym.altervista.org/php/getCourseCategory.php" + parameter , //Relative                                                                      or absolute path to file.php file
 
                             success: function(response) {
                                 var category_object = response;
@@ -87,14 +121,16 @@ function Ready() {
                                 alert("Status: " + textStatus); alert("Error: " + errorThrown);
                             }
                         });
-                /***finish category course***/
+      /***finish category course***/
+    
+           
                 
-                /***get instructor ***/
+ /***get instructor ***/
                 $.ajax({
                             method: "GET",
                             dataType: "jsonp", //type of data
                             crossDomain: true,  //localhost purposes
-                            url: "http://globogym.altervista.org/php/instructor.php" + instructor_id , //Relative                                                                      or absolute path to file.php file
+                            url: "http://globogym.altervista.org/php/instructor.php" + parameter , //Relative                                                                      or absolute path to file.php file
 
                             success: function(response) {
                                 var instructor_object = response;
@@ -122,38 +158,7 @@ function Ready() {
                             }
                         });
 /***finish instructor ***/
-          
-    $.ajax({
-            method: "GET",
-            dataType: "jsonp", //type of data
-            crossDomain: true,  //localhost purposes
-            url: "http://globogym.altervista.org/php/getSchedule.php" + parameter, //Relative or absolute path to                                                                                     file.php file
-            //data: {number:value},
-            success: function(response) {
-               
-                var schedule = response;
-                var table="<thead><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>"
-               
-                 table+="<tbody><td>" + schedule.Monday + "</td>" + "<td>" + schedule.Tuesday + "</td>" +  "<td>" + schedule.Wednesday + "</td>" + "<td>" + schedule.Thursday + "</td>" +  "<td>" + schedule.Friday + "</td>"  + "<td>" + schedule.Saturday + "</td>"  + "<td>" + schedule.Sunday + "</td>" + "</tbody>"
-
-                 $("#schedule_table").append(table);
-                
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("Status: " + textStatus); alert("Error: " + errorThrown);
-            }
-        });
     
-    
-    
-
- }, //succes of the first ajax
-     
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                alert("Status: " + textStatus); alert("Error: " + errorThrown);
-            }
-}); //close the first ajax request;
-        
     
     
     

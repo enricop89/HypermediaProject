@@ -20,7 +20,7 @@ else {
 		$id = mysql_real_escape_string($_REQUEST['id']);
 
         // extract results mysqli_result::fetch_array
-		$query = "SELECT CourseCategory.LinkToPage,CourseCategory.Description  FROM CourseCategory WHERE CourseCategory.CCategoryId = {$id}";
+		$query = "SELECT CourseCategory.LinkToPage,CourseCategory.Description  FROM CourseCategory,Course WHERE CourseCategory.CCategoryId = Course.CategoryId AND Course.Id= {$id}";
 
         //query execution
 		$result = $mysqli->query($query);
