@@ -46,8 +46,10 @@ function Ready(){
 				var courses = response;
 				var el="";
 				for(i=0; i<courses.length; i++){
-					el="<a class='btn btn-primary col-md-3 col-xs-6 wow fadeInDown' href=course.html?id="+courses[i].Id+">"+courses[i].Name+" <small>("+courses[i].CategoryName+")</small></a>"
-					$("#instructor-courses").append(el);
+                   
+					el="<li><h2><a href=course.html?id="+courses[i].Id+">"+courses[i].Name+"      </a><small><a href='category.html?id=" + courses[i].CategoryId  + "'>(" +courses[i].CategoryName + ")</small></a></h2> </li>"
+                    
+					$("#instructor-course-list").append(el);
 				}
 			},
 			error: function(XMLHttpRequest, textStatus, errorThrown) {
