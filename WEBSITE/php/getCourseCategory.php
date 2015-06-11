@@ -20,17 +20,14 @@ else {
 		$id = mysql_real_escape_string($_REQUEST['id']);
 
         // extract results mysqli_result::fetch_array
-		$query = "SELECT CourseCategory.LinkToPage,CourseCategory.Description  FROM CourseCategory,Course WHERE CourseCategory.CCategoryId = Course.CategoryId AND Course.Id= {$id}";
+		$query = "SELECT CourseCategory.LinkToPage, CourseCategory.Description  FROM CourseCategory,Course WHERE CourseCategory.CCategoryId = Course.CategoryId AND Course.Id= {$id}";
 
         //query execution
 		$result = $mysqli->query($query);
 
-		if($result->num_rows >0)
-		{
-			$callback = $_GET['callback'];
-			$json = json_encode($result->fetch_array(MYSQL_ASSOC));
-			echo "{$callback}({$json})";
-		}
+		$callback = $_GET['callback'];
+		$json = json_encode($result->fetch_array(MYSQL_ASSOC));
+		echo "{$callback}({$json})";
 	}
 
 

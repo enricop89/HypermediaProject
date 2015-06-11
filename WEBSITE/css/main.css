@@ -2614,26 +2614,26 @@ SHORTCODES PAGE CSS
     color: #343434;
 }
 
-#sport-photo img{
+#category-photo img{
     width: 100%;
 }
 
-#sport-instructors > #instr {
+#category-instructors > #instr {
     text-align: center;
 }
 
-#sport-instructors h2{
+#category-instructors h2{
     padding-right: 15px;
     padding-left: 15px;
 }
 
-#sport-courses,
+#category-courses,
 #instructor-courses{
     padding-right: 15px;
     padding-left: 15px;
 }
 
-#sport-courses > .btn-primary,
+#category-courses > .btn-primary,
 #instructor-courses > .btn-primary{
     margin-left: 15px;
 }
@@ -2654,6 +2654,22 @@ SHORTCODES PAGE CSS
 	width: 75%;
 }
 
+#instructor-photo-small
+{
+	margin: 10px;
+	display: block;
+	width: 25%;
+	float:left;
+}
+
+#instructor-photo-small img
+{
+	margin: auto;
+	display: block;
+	width: 100%;
+}
+
+
 #instructors-list h2,
 #courses-list h2
 {
@@ -2669,16 +2685,17 @@ SHORTCODES PAGE CSS
 	display: inline-block;
 }
 
-#all-instructors h1
+#all-instructors,
+#all-courses
 {
     color:black;
-	margin-left: 20px;
+	padding: 20px;
 }
 
+#all-instructors h1,
 #all-courses h1
 {
-    color:black;
-	margin-left: 20px;
+	color:black;
 }
 
 /********************************
