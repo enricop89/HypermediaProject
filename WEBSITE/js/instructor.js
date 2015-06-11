@@ -62,7 +62,7 @@ function Ready(){
 			url: "http://globogym.altervista.org/php/instructorAwards.php"+parameter,
 			success: function(response){
 				for(i=0; i<response.length; i++){
-					var award = response.Description;
+					var award = response[i].Description;
 					$("#instructor-awards-list").append("<li>"+award+"</li>");
 				}
 			},

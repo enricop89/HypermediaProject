@@ -2672,11 +2672,10 @@ SHORTCODES PAGE CSS
 
 #instructors-list h2,
 #courses-list h2
+#courses-list-bylevel h2
 {
 	display: inline;
 }
-
-
 
 #instructors-list img.img-circle
 {

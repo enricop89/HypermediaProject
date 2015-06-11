@@ -28,25 +28,27 @@ else {
 	}
 	else
 	{
-		$query = "";
-		if (!isset($_REQUEST['category']))
-			$query = "SELECT * FROM Course";
+		if (isset($_REQUEST['byLevel']))
+		{
+			$query = "SELECT * FROM Course, CourseCategory WHERE Course.CategoryId = CourseCategory.CCategoryId ORDER BY Course.Level DESC, Course.Name ASC";
+		}
 		else
-			$query = "SELECT * FROM Course, CourseCategory WHERE Course.CategoryId = CourseCategory.CCategoryId";
+		{
+			$query= "SELECT * FROM Course, CourseCategory WHERE Course.CategoryId = CourseCategory.CCategoryId ORDER BY Name ASC";
+		}
 		
 		//query execution
 		$result = $mysqli->query($query);
-		//if there are data available
-		if($result->num_rows >0)
-		{
-			$myArray = array();//create an array
-			while($row = $result->fetch_array(MYSQL_ASSOC)) {
-				array_push($myArray, array_map('utf8_encode', $row));
-			}
-			$callback = $_GET['callback'];
-			$json = json_encode($myArray);
-			echo "{$callback}({$json})";
+		
+		if (is_null($result)) echo mysql_error();
+		
+		$myArray = array();
+		while($row = $result->fetch_array(MYSQL_ASSOC)) {
+			array_push($myArray, array_map('utf8_encode', $row));
 		}
+		$callback = $_GET['callback'];
+		$json = json_encode($myArray);
+		echo "{$callback}({$json})";
 
 		//free result
 		$result->close();
