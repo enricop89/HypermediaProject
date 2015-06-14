@@ -1,8 +1,6 @@
 
 
 // Contact form
-	var form = $('#main-contact-form');
-
 document.getElementById("button_submit").addEventListener("click", function () {
     var name = $.trim($('#name').val());
     var email = $.trim($('#email').val());
