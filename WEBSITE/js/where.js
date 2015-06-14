@@ -1,9 +1,13 @@
 $(document).ready(ready);
 
-var latitude,longitude;
+var latitude,longitude,details;
 function set_latlong(x,y){
     latitude = parseFloat(x);
     longitude = parseFloat(y);
+}
+
+function set_Details(text){
+    details=text;
 }
 
 function ready(){
@@ -22,7 +26,8 @@ function ready(){
             var byTrain="";
             var byCar="";
             
-            set_latlong(location.Lat,location.Long)
+            set_latlong(location.Lat,location.Long);
+            set_Details(location. Description );
 
          address="<p class='lead'>"+location.Address+"</p>";
              byBus= "<p>"+location.ByBus+"</p>";
